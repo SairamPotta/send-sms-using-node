@@ -4,10 +4,12 @@ const ejs = require('ejs');
 const Nexmo = require('nexmo');
 const socketio = require('socket.io');
 
+const secreteKey = 'adXWW4e0cOvQNFnN';
+
 // Init Nexmo
 const nexmo = new Nexmo({
     apiKey: '4dc05159',
-    apiSecret: 'adXWW4e0cOvQNFnN'
+    apiSecret: secreteKey
 });
 
 //Init app
@@ -31,8 +33,6 @@ app.get('/', (req, res) => {
 
 // Catch form submit
 app.post('/', (req, res) => {
-    // res.send(req.body);
-    // console.log(req.body);
     const number = req.body.number;
     const text = req.body.text;
 
